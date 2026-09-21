@@ -1,0 +1,27 @@
+# AWS private keys
+*.pem
+*.key
+
+# AWS credentials
+.aws/
+credentials
+config
+
+# Environment/secrets
+.env
+.env.*
+*.secret
+
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+crash.log
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
