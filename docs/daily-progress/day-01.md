@@ -2,7 +2,7 @@
 
 **Objective:** Stand up an EC2-based Linux server with a running Nginx service to act as the monitoring target for the rest of the project.
 
-Companion notes to [`INTERVIEW_PREP.md`](./INTERVIEW_PREP.md) — this file is the "what did you actually do on Day 1" version, phrased the way you'd say it out loud.
+Companion notes to [`interview-notes.md`](https://github.com/arghyaroy331/aws-monitoring-alerting-system/blob/main/docs/interview-notes.md) — this file is the "what did you actually do on Day 1" version, phrased the way you'd say it out loud.
 
 ## Contents
 
