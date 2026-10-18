@@ -1,27 +1,17 @@
-# AWS private keys
-*.pem
-*.key
+# Terraform local files
+**/.terraform/
+**/*.tfstate
+**/*.tfstate.*
+**/*.tfplan
+**/tfplan
+**/terraform.tfvars
+**/terraform.tfvars.json
+**/plan-review.txt
+**/crash.log
+**/crash.*.log
 
-# AWS credentials
-.aws/
-credentials
-config
-
-# Environment/secrets
-.env
-.env.*
-*.secret
-
-# Terraform
-.terraform/
-*.tfstate
-*.tfstate.*
-crash.log
-
-# IDE
-.vscode/
-.idea/
-
-# OS
-.DS_Store
-Thumbs.db
+# Credentials and private keys
+**/.env
+**/.env.*
+**/*.pem
+**/*.key

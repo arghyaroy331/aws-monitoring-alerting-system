@@ -1,0 +1,19 @@
+# Terraform working files
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfplan
+tfplan
+crash.log
+crash.*.log
+
+# Local secrets and configuration
+terraform.tfvars
+terraform.tfvars.json
+*.pem
+*.key
+.env
+.env.*
+
+# Plan review files
+plan-review.txt
