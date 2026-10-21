@@ -851,11 +851,10 @@ No screenshots are committed yet. This is the planned location:
 
 3. Once the file is in the repository, show it in this README with:
 
-   ```markdown
- ![CloudWatch Dashboard](cloudwatch-monitoring-dashboard.png.png)
-   ```
+![AWS CloudWatch Dashboard](cloudwatch-monitoring-dashboard.png.png)
+   
 
----⭐ If you find this project useful, please consider giving it a star on GitHub!
+⭐ If you find this project useful, please consider giving it a star on GitHub!
 
 ## Author
 
