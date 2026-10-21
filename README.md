@@ -648,24 +648,25 @@ Share error text only after removing account IDs, ARNs, IP addresses, and email 
 
 ## Security Best Practices
 
-| Practice | How it applies here |
-|----------|---------------------|
-| **IAM roles, not access keys** | The EC2 instance uses an instance profile, so no AWS keys are stored on the server. |
-| **Least privilege** | Grant only the policies each identity needs. Review the broad managed policies before reusing them in other accounts. |
-| **Restricted SSH** | If SSH is enabled, it is limited to the administrator's configured IP. **Never open SSH to `0.0.0.0/0`.** |
-| **Session Manager** | IAM-controlled terminal access removes the need to expose an administrative port. |
-| **Minimal public exposure** | Only HTTP on port 80 is intended for the public. |
-| **Terraform state security** | State can contain sensitive values. Never commit it. For team use, consider a remote backend with encryption and locking. |
-| **GitHub secret protection** | Never commit keys, private keys, `terraform.tfvars`, state files, or saved plan files. Keep `.terraform.lock.hcl` committed, but not the `.terraform/` directory. |
-| **Encrypted EBS storage** | The root volume is encrypted at rest. |
-| **Redacted screenshots** | Hide account IDs, ARNs, email addresses, and IP addresses before publishing images. |
+| Security item                                          | Expected status |
+| ------------------------------------------------------ | --------------- |
+| SSH access restricted to your administrator IP (`/32`) | ✅               |
+| HTTP port 80 open for the public website               | ✅               |
+| IMDSv2 required on EC2                                 | ✅               |
+| Encrypted 8 GB gp3 root volume                         | ✅               |
+| IAM role attached to EC2                               | ✅               |
+| No AWS access keys committed to GitHub                 | ✅               |
+| Session Manager available for administration           | ✅               |
+
 
 ---
 
 ## Cost Optimization and Cleanup
 
-> [!WARNING]
-> **This project is not guaranteed to be free.** Charges depend on current AWS pricing and your account's eligibility for any free tier or credits. Always check the AWS pricing pages and your billing dashboard.
+AWS charges can continue while resources are running.
+Budget alerts notify you but do not automatically stop resources.
+EC2, EBS storage, public IPv4, and CloudWatch usage may incur charges.
+Terminating EC2 alone may not delete every resource created separately.
 
 ### What can incur charges
 
@@ -851,10 +852,10 @@ No screenshots are committed yet. This is the planned location:
 3. Once the file is in the repository, show it in this README with:
 
    ```markdown
-   ![CloudWatch dashboard](docs/screenshots/cloudwatch-dashboard.png)
+ ![CloudWatch Dashboard](cloudwatch-monitoring-dashboard.png.png)
    ```
 
----
+---⭐ If you find this project useful, please consider giving it a star on GitHub!
 
 ## Author
 
