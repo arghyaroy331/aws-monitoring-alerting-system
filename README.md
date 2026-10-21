@@ -581,8 +581,7 @@ The dashboard gives one place to see server health at a glance. It contains thre
 
 Its purpose is to show trends and spikes, and to help judge whether the alarm thresholds are reasonable. Dashboards visualize metrics; they do not send alerts. Alerts come from the alarms.
 
-![AWS CloudWatch Dashboard](cloudwatch-dashboard.png)
-
+![AWS CloudWatch Dashboard](cloudwatch-monitoring-dashboard.png.png)
 ---
 
 ## Testing and Validation Evidence
