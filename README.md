@@ -187,7 +187,11 @@ flowchart TB
     class CPU,MEM,DISK,DASH metric
     class A1,A2,A3,SNS alarm
     class TF,SSM,IAM,Admin admin
+
 ```
+### Architecture Diagram Image
+
+![AWS Monitoring & Alerting System Architecture](AWS%20Monitoring%20%26%20Alerting%20System%401x.png)
 
 **How to read the diagram**
 
