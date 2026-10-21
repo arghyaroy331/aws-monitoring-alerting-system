@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AWS Monitoring & Alerting System</title>
+<style>
+:root {
+  --bg: #080f1c;
+  --panel: #101b2d;
+  --border: #26374f;
+  --text: #eef5ff;
+  --muted: #a5b5cc;
+  --accent: #54d5ff;
+  --green: #55e6a5;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+.container { width: min(1100px, 90%); margin: auto; }
+header {
+  border-bottom: 1px solid var(--border);
+  padding: 18px 0;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+.brand { font-weight: 700; font-size: 18px; }
+.brand span { color: var(--accent); }
+nav a, .button {
+  color: var(--text);
+  text-decoration: none;
+  margin-left: 18px;
+}
+.hero { padding: 85px 0 65px; }
+.eyebrow {
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 12px;
+  font-weight: 700;
+}
+h1 { font-size: clamp(36px, 6vw, 62px); line-height: 1.08; margin: 16px 0; }
+h1 span { color: var(--accent); }
+p { color: var(--muted); }
+.hero p { max-width: 720px; font-size: 17px; }
+.button {
+  display: inline-block;
+  margin: 18px 10px 0 0;
+  padding: 12px 18px;
+  border: 1px solid var(--accent);
+  border-radius: 8px;
+  font-weight: 600;
+}
+.button.primary { background: var(--accent); color: #07111f; }
+section { padding: 38px 0; }
+h2 { font-size: 27px; margin-bottom: 8px; }
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-top: 22px;
+}
+.card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 13px;
+  padding: 22px;
+}
+.card h3 { margin: 0 0 8px; color: var(--accent); }
+.tag {
+  display: inline-block;
+  color: var(--green);
+  background: #15372f;
+  border-radius: 20px;
+  padding: 4px 10px;
+  font-size: 12px;
+  margin: 4px 4px 4px 0;
+}
+.notice {
+  border-left: 3px solid var(--accent);
+  padding: 14px 18px;
+  background: var(--panel);
+  border-radius: 0 8px 8px 0;
+}
+footer {
+  margin-top: 35px;
+  border-top: 1px solid var(--border);
+  padding: 25px 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+@media (max-width: 600px) {
+  nav { align-items: flex-start; flex-direction: column; }
+  nav a { margin: 0 12px 0 0; }
+  .hero { padding-top: 55px; }
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="container">
+    <nav>
+      <div class="brand">AWS <span>MONITORING</span></div>
+      <div>
+        <a href="#overview">Overview</a>
+        <a href="#services">Services</a>
+        <a href="#monitoring">Monitoring</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero container" id="overview">
+    <div class="eyebrow">Cloud Infrastructure · Observability · Automation</div>
+    <h1>AWS Monitoring<br><span>& Alerting System</span></h1>
+    <p>
+      A Terraform-provisioned EC2 web server with CloudWatch monitoring,
+      resource-usage alarms, and SNS email notifications. Built to demonstrate
+      infrastructure as code and practical cloud operations.
+    </p>
+    <a class="button primary"
+       href="https://github.com/arghyaroy331/aws-monitoring-alerting-system"
+       target="_blank" rel="noopener noreferrer">View GitHub Project ↗</a>
+    <a class="button" href="#monitoring">Explore Monitoring ↓</a>
+    <div style="margin-top:24px">
+      <span class="tag">AWS ap-south-1</span>
+      <span class="tag">Terraform IaC</span>
+      <span class="tag">Amazon EC2</span>
+      <span class="tag">CloudWatch + SNS</span>
+    </div>
+  </section>
+
+  <section class="container" id="services">
+    <h2>Infrastructure Components</h2>
+    <p>Core services used to provision and monitor the application host.</p>
+    <div class="grid">
+      <article class="card">
+        <h3>Terraform</h3>
+        <p>Defines AWS networking, security rules, IAM permissions, and EC2 infrastructure as code.</p>
+      </article>
+      <article class="card">
+        <h3>Amazon EC2</h3>
+        <p>Runs Amazon Linux 2023 and the Nginx web server in the Mumbai region.</p>
+      </article>
+      <article class="card">
+        <h3>Amazon CloudWatch</h3>
+        <p>Collects and evaluates CPU, memory, and disk usage metrics through metrics and alarms.</p>
+      </article>
+      <article class="card">
+        <h3>Amazon SNS</h3>
+        <p>Delivers email notifications when configured alarm actions are triggered.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="container" id="monitoring">
+    <h2>Monitoring Coverage</h2>
+    <p>Resource metrics are visualized in the CloudWatch dashboard.</p>
+    <div class="grid">
+      <article class="card">
+        <h3>CPU Utilization</h3>
+        <p>Metric: <strong>CPUUtilization</strong></p>
+        <p>Alarm threshold: above 70%.</p>
+      </article>
+      <article class="card">
+        <h3>Memory Usage</h3>
+        <p>Metric: <strong>mem_used_percent</strong></p>
+        <p>Alarm threshold: above 80%.</p>
+      </article>
+      <article class="card">
+        <h3>Disk Usage</h3>
+        <p>Metric: <strong>disk_used_percent</strong></p>
+        <p>Alarm threshold: above 80%.</p>
+      </article>
+    </div>
+    <div class="notice" style="margin-top:20px">
+      <strong>Live monitoring:</strong>
+      Current metrics and alarm states are available in the AWS CloudWatch
+      console. This webpage is a project overview, not a live metrics dashboard.
+    </div>
+  </section>
+
+  <section class="container">
+    <h2>Security & Operations</h2>
+    <div class="grid">
+      <article class="card">
+        <h3>Access Controls</h3>
+        <p>SSH restricted to an administrator IP, with Systems Manager access available for administration.</p>
+      </article>
+      <article class="card">
+        <h3>Instance Protection</h3>
+        <p>IMDSv2 required and encrypted root storage configured.</p>
+      </article>
+      <article class="card">
+        <h3>Cost Awareness</h3>
+        <p>Resource usage and AWS billing require regular review; budget alerts do not automatically stop services.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="container">
+    <div class="notice">
+      <strong>Project status:</strong> Terraform provisioning, EC2 hosting,
+      CloudWatch metrics and alarms, dashboard, and the CPU-to-SNS email
+      notification test are implemented. GitHub Actions CI/CD and Lambda-based
+      remediation remain planned enhancements.
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    AWS Monitoring & Alerting System · Built with Terraform, EC2, CloudWatch and SNS
+    <br>Demo website hosted on Amazon EC2 using Nginx.
+  </div>
+</footer>
+</body>
+</html>
