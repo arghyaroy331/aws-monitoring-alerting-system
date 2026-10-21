@@ -586,24 +586,22 @@ Its purpose is to show trends and spikes, and to help judge whether the alarm th
 
 ## Testing and Validation Evidence
 
-| Check | Result |
-|-------|--------|
-| EC2 website | Verified working |
-| Terraform infrastructure | Deployed |
-| CloudWatch Agent | Running |
-| CPU metric | Visible |
-| Memory metric | Visible |
-| Disk metric | Visible |
-| CPU alarm | Created and tested |
-| CPU SNS email delivery | Verified |
-| CPU threshold restored to 70% | Done |
-| CPU alarm returned to `OK` | Verified |
-| Memory alarm | Created |
-| Disk alarm | Created |
-| SNS email subscription | Confirmed |
-| CloudWatch dashboard | Created |
-| **Memory alarm notification test** | **Pending** |
-| **Disk alarm notification test** | **Pending** |
+### CPU Alarm and SNS Email Notification Test
+
+The CPU alarm notification path was tested successfully.
+
+| Item | Result |
+|---|---|
+| Alarm | `EC2-High-CPU-Alert` |
+| Normal CPU threshold | Greater than 70% |
+| Test method | Temporarily changed the threshold to 0% |
+| Alarm transition | `OK` → `ALARM` |
+| Notification | SNS email received successfully |
+| Recovery | Restored the threshold to 70%; alarm returned to `OK` |
+
+**Result:** The test confirmed that CloudWatch alarm state changes can trigger SNS email notifications.
+
+**Note:** The threshold was temporarily changed for testing and then restored. Memory and disk alarm notification paths have not yet been tested end to end.
 
 ### How the CPU alarm was tested
 
